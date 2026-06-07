@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "financial-dw": {
+      "command": "C:\\Users\\I758037\\OneDrive - SAP SE\\Documents\\UVT\\DW\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "mcp_server.server"],
+      "cwd": "C:\\Users\\I758037\\OneDrive - SAP SE\\Documents\\UVT\\DW"
+    }
+  }
+}

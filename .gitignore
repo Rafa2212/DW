@@ -1,0 +1,30 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Environment — never commit real credentials
+.env
+
+# Scala / sbt
+spark/target/
+spark/project/target/
+spark/project/project/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE / OS
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
+
+# Claude Code local settings (contains absolute paths & local MCP config)
+.claude/settings.local.json

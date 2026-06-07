@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  cassandra:
+    image: cassandra:4.1
+    container_name: cassandra-dw
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=financial_dw_cluster
+      - CASSANDRA_DC=datacenter1
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=768M
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh -e 'describe keyspaces' || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 60s
+
+volumes:
+  cassandra_data:

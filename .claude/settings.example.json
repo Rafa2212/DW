@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "financial-dw": {
+      "command": "python",
+      "args": ["-m", "mcp_server.server"],
+      "cwd": "<absolute-path-to-this-project>"
+    }
+  }
+}
