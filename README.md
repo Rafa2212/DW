@@ -189,7 +189,7 @@ ANTHROPIC_API_KEY=your_key_here
 ANTHROPIC_BASE_URL=https://api.anthropic.com
 ```
 
-If using a compatible proxy (e.g. Hyperspace AI), set `ANTHROPIC_BASE_URL` to your proxy base URL (e.g. `http://localhost:6655/anthropic`).
+If using a compatible proxy, set `ANTHROPIC_BASE_URL` to your proxy base URL (e.g. `http://localhost:6655/anthropic`).
 
 ---
 
@@ -252,43 +252,3 @@ To register with Claude Code, copy `.claude/settings.example.json` to `.claude/s
 | `STOCKS/{TICKER}`        | `STOCKS/AAPL`            | Yahoo Finance               |
 
 ---
-
-## Tests
-
-```bash
-pytest
-```
-
----
-
-## Project Structure
-
-```text
-.
-├── api/               FastAPI application
-│   ├── main.py
-│   ├── schemas.py
-│   └── routers/       assets, data_sources, data, ingest, analytics, chat, spark
-├── dal/               Data Access Layer (Cassandra)
-│   ├── connection.py
-│   ├── models.py
-│   └── repositories/
-├── ingestion/         ETL pipeline
-│   ├── extractor.py   Nasdaq Data Link + Yahoo Finance clients
-│   ├── transformer.py
-│   ├── loader.py
-│   └── pipeline.py
-├── mcp_server/        MCP server (stdio transport)
-├── spark/             Scala Spark jobs
-│   └── src/main/scala/ro/uvt/info/dw/
-│       ├── ComputeTotal.scala
-│       ├── Regression.scala
-│       ├── MovingAverage.scala
-│       └── RiskMetrics.scala
-├── frontend/          React/TypeScript UI
-├── tests/             Python unit tests
-├── schema.cql         Cassandra keyspace + table definitions
-├── docker-compose.yml Cassandra container
-├── .env.example       Environment variable template
-└── requirements.txt   Python dependencies
-```
